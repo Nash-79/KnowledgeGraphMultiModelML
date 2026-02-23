@@ -1,0 +1,14 @@
+{
+    "python.defaultInterpreterPath": "/home/codespace/.python/current/bin/python",
+    "python.pythonPath": "/home/codespace/.python/current/bin/python",
+    "pylance.insidersChannel": "off",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./kg-mmml",
+        "-p",
+        "test*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true
+}

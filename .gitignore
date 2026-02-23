@@ -1,0 +1,13 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*.ipynb_checkpoints
+.venv/
+.venv
+*.env
+*.env.*
+.conda/
+**/.conda/
+kg-mmml/.conda/
+kg-mmml/.hypothesis/
+claude*

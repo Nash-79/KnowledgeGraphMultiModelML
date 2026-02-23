@@ -1,0 +1,36 @@
+# configs/experiment_joint.yaml
+experiment:
+  name: joint_kgmm
+  seeds: [13, 17, 23, 29, 31]
+
+data:
+  dataset: sec_edgar_text_v1
+  kg_snapshot: data/kg/sec_edgar_2025-10-11
+  taxonomy: datasets/sec_edgar/taxonomy/usgaap_combined.csv
+  split: official_2022_2024
+
+model:
+  type: joint_model
+  text_encoder: tfidf
+  concept_features: true
+  # Consistency penalty weight (lambda): regularizes predictions to match parent-support distribution
+  # Week 9 ablation results (Oct 2025):
+  #   - lambda=0.0: macro-F1=81.28%, micro-F1=91.94% (BEST macro-F1)
+  #   - lambda=0.1: macro-F1=79.95%, micro-F1=91.97% (-1.33pp macro-F1)
+  # Conclusion: Penalty constrains rare-class predictions without measurable benefit.
+  # Recommendation: Use 0.0 (OFF) for production; test 0.01-0.05 only if hierarchical
+  # constraint violations must be minimized (at cost of macro-F1 performance).
+  consistency_weight: 0.0  # Default: penalty OFF (based on W9 ablation)
+
+train:
+  batch_size: 128
+  lr: 2e-3
+  max_epochs: 6
+
+eval:
+  metrics: [micro_f1, macro_f1]
+  srs: {enabled: true, weights: {RTF: 0.35, AP: 0.2, HP: 0.25, AtP: 0.2}}
+  latency_slo_ms: 150
+
+logging:
+  out_dir: reports

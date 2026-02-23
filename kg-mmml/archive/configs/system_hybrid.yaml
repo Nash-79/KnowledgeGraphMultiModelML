@@ -1,0 +1,12 @@
+# System hybrid configuration
+system:
+  graph_db: {type: neo4j, uri: bolt://localhost:7687, db: neo4j, schema_version: v1}
+  vector_index: {type: hnsw, dim: 768, M: 32, ef_construction: 200, ef_search: 100}
+  cache: {type: redis, ttl_seconds: 86400}
+  stream: {type: kafka, topic: kg_updates}
+slo:
+  query_2hop_plus_vector_p95_ms: 150
+  p99_to_p95_ratio_max: 2.0
+fallbacks:
+  vector_only_if_ms_over: 200
+  defer_explanation_if_queue: true

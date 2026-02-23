@@ -1,0 +1,275 @@
+parents:
+  # === TOP LEVEL BALANCE SHEET ===
+  "us-gaap:Assets":
+    - "us-gaap:CurrentAssets"
+    - "us-gaap:NoncurrentAssets"
+    
+  "us-gaap:Liabilities":
+    - "us-gaap:CurrentLiabilities"
+    - "us-gaap:NoncurrentLiabilities"
+    
+  # === CURRENT ASSETS (more granular) ===
+  "us-gaap:CurrentAssets":
+    - "us-gaap:CashAndCashEquivalents"
+    - "us-gaap:ShortTermInvestments"
+    - "us-gaap:AccountsReceivableNet"
+    - "us-gaap:InventoryNet"
+    - "us-gaap:PrepaidExpensesAndOtherCurrentAssets"
+    
+  "us-gaap:CashAndCashEquivalents":
+    - "Cash.*"
+    - "CashCashEquivalents.*"
+    - "CashAndCashEquivalents.*"
+    - "RestrictedCash.*"
+    
+  "us-gaap:ShortTermInvestments":
+    - "ShortTermInvestment.*"
+    - "MarketableSecurities.*"
+    - "TradingSecurities.*"
+    - "AvailableForSaleSecurities.*Current"
+    
+  "us-gaap:AccountsReceivableNet":
+    - "AccountsReceivable.*"
+    - "TradeReceivables.*"
+    - "NotesReceivable.*Current"
+    
+  "us-gaap:InventoryNet":
+    - "Inventory.*"
+    - "InventoryRaw.*"
+    - "InventoryFinished.*"
+    - "InventoryWork.*"
+    
+  "us-gaap:PrepaidExpensesAndOtherCurrentAssets":
+    - "Prepaid.*"
+    - "PrepaidExpense.*"
+    - "OtherCurrentAssets.*"
+    - "DeferredCosts.*Current"
+    
+  # === NONCURRENT ASSETS (more granular) ===
+  "us-gaap:NoncurrentAssets":
+    - "us-gaap:PropertyPlantAndEquipmentNet"
+    - "us-gaap:IntangibleAssetsNet" 
+    - "us-gaap:LongTermInvestments"
+    - "us-gaap:DeferredTaxAssetsNet"
+    - "us-gaap:OtherNoncurrentAssets"
+    
+  "us-gaap:PropertyPlantAndEquipmentNet":
+    - "PropertyPlantAndEquipment.*"
+    - "BuildingsAndImprovements.*"
+    - "MachineryAndEquipment.*"
+    - "Land.*"
+    - "LeaseholdImprovements.*"
+    
+  "us-gaap:IntangibleAssetsNet":
+    - "Goodwill.*"
+    - "IntangibleAsset.*"
+    - "FiniteLivedIntangibleAssets.*"
+    - "CapitalizedComputerSoftware.*"
+    - "Patents.*"
+    - "Trademarks.*"
+    
+  "us-gaap:LongTermInvestments":
+    - "LongTermInvestment.*"
+    - "EquityMethodInvestment.*"
+    - "AvailableForSaleSecurities.*Noncurrent"
+    - "HeldToMaturitySecurities.*"
+    
+  "us-gaap:DeferredTaxAssetsNet":
+    - "DeferredTaxAsset.*"
+    - "DeferredTaxAssets.*"
+    
+  "us-gaap:OtherNoncurrentAssets":
+    - "OperatingLeaseRightOfUseAsset.*"
+    - "OtherAssets.*"
+    - "RestrictedInvestments.*"
+    
+  # === CURRENT LIABILITIES (more granular) ===
+  "us-gaap:CurrentLiabilities":
+    - "us-gaap:AccountsPayableAndAccruedLiabilities"
+    - "us-gaap:ShortTermDebtAndCurrentMaturities"
+    - "us-gaap:DeferredRevenueAndCustomerAdvances"
+    - "us-gaap:OtherCurrentLiabilities"
+    
+  "us-gaap:AccountsPayableAndAccruedLiabilities":
+    - "AccountsPayable.*"
+    - "AccruedLiabilities.*"
+    - "AccruedExpense.*"
+    - "AccruedSalaries.*"
+    - "AccruedInsurance.*"
+    - "AccruedProfessionalFees.*"
+    
+  "us-gaap:ShortTermDebtAndCurrentMaturities":
+    - "ShortTermDebt.*"
+    - "NotesPayableCurrent.*"
+    - "CurrentPortionOfLongTermDebt.*"
+    - "LineOfCreditCurrent.*"
+    
+  "us-gaap:DeferredRevenueAndCustomerAdvances":
+    - "DeferredRevenue.*Current"
+    - "ContractWithCustomerLiability.*Current"
+    - "CustomerAdvances.*"
+    - "CustomerDeposits.*"
+    
+  "us-gaap:OtherCurrentLiabilities":
+    - "AccruedIncomeTaxes.*"
+    - "DividendsPayable.*"
+    - "AccruedRent.*"
+    
+  # === NONCURRENT LIABILITIES (more granular) ===
+  "us-gaap:NoncurrentLiabilities":
+    - "us-gaap:LongTermDebtAndCapitalLeases"
+    - "us-gaap:DeferredTaxLiabilitiesNet"
+    - "us-gaap:EmployeeBenefitPlans"
+    - "us-gaap:OtherNoncurrentLiabilities"
+    
+  "us-gaap:LongTermDebtAndCapitalLeases":
+    - "LongTermDebt.*Noncurrent"
+    - "LongTermNotesPayable.*"
+    - "ConvertibleDebt.*"
+    - "CapitalLeaseObligations.*"
+    - "FinanceLeaseObligations.*"
+    
+  "us-gaap:DeferredTaxLiabilitiesNet":
+    - "DeferredTaxLiabilities.*Noncurrent"
+    - "DeferredTaxLiability.*"
+    
+  "us-gaap:EmployeeBenefitPlans":
+    - "PensionAndOtherPostretirement.*"
+    - "DefinedBenefitPlan.*"
+    - "PostretirementBenefits.*"
+    
+  "us-gaap:OtherNoncurrentLiabilities":
+    - "OperatingLeaseLiability.*Noncurrent"
+    - "AssetRetirementObligation.*"
+    - "EnvironmentalRemediation.*"
+    
+  "us-gaap:Assets":
+    - ".*Asset(?!s$).*"
+    - ".*Assets$"
+    
+  "us-gaap:Liabilities":
+    - ".*Liability.*"
+    - ".*Liabilities(?!And).*"
+    
+  # === STOCKHOLDERS EQUITY (enhanced hierarchical) ===
+  "us-gaap:StockholdersEquity":
+    - "us-gaap:CommonStock"
+    - "us-gaap:PreferredStock"
+    - "us-gaap:AdditionalPaidInCapital"
+    - "us-gaap:RetainedEarnings"
+    - "us-gaap:AccumulatedOtherComprehensiveIncome"
+    - "us-gaap:TreasuryStock"
+    - "ShareholdersEquity.*"
+    - "StockholdersEquity.*"
+    
+  "us-gaap:CommonStock":
+    - "CommonStock.*Outstanding"
+    - "CommonStock.*ParValue"
+    - "CommonStock.*SharesIssued"
+    
+  "us-gaap:PreferredStock":
+    - "PreferredStock.*Outstanding"
+    - "PreferredStock.*ParValue"
+    - "PreferredStock.*Liquidation.*"
+    
+  "us-gaap:AdditionalPaidInCapital":
+    - "AdditionalPaidInCapital.*Common"
+    - "AdditionalPaidInCapital.*Preferred"
+    - "PaidInCapital.*"
+    
+  "us-gaap:RetainedEarnings":
+    - "RetainedEarnings.*"
+    - "AccumulatedDeficit.*"
+    
+  "us-gaap:AccumulatedOtherComprehensiveIncome":
+    - "AccumulatedOtherComprehensiveIncome.*"
+    - "AccumulatedOtherComprehensiveLoss.*"
+    - "UnrealizedGain.*Securities"
+    - "UnrealizedLoss.*Securities"
+    - "ForeignCurrencyTranslation.*"
+    
+  "us-gaap:TreasuryStock":
+    - "TreasuryStock.*Cost"
+    - "TreasuryStock.*Shares"
+    
+  # === INCOME STATEMENT (hierarchical) ===
+  "us-gaap:Revenues":
+    - "us-gaap:ProductRevenue"
+    - "us-gaap:ServiceRevenue"
+    - "us-gaap:OtherRevenue"
+    
+  "us-gaap:ProductRevenue":
+    - "ProductRevenue.*"
+    - "SalesRevenue.*"
+    - "ProductSales.*"
+    
+  "us-gaap:ServiceRevenue":
+    - "ServiceRevenue.*"
+    - "ProfessionalServices.*"
+    - "MaintenanceRevenue.*"
+    
+  "us-gaap:OtherRevenue":
+    - "InterestIncome.*"
+    - "DividendIncome.*"
+    - "GainOnSale.*"
+    - "RoyaltyRevenue.*"
+    
+  "us-gaap:CostOfRevenue":
+    - "us-gaap:CostOfGoodsSold" 
+    - "us-gaap:CostOfServices"
+    
+  "us-gaap:CostOfGoodsSold":
+    - "CostOfGoodsSold.*"
+    - "CostOfProductsSold.*"
+    - "CostOfGoods.*"
+    
+  "us-gaap:CostOfServices":
+    - "CostOfServices.*"
+    - "CostOfServiceRevenue.*"
+    
+  "us-gaap:OperatingExpenses":
+    - "us-gaap:SellingGeneralAndAdministrativeExpense"
+    - "us-gaap:ResearchAndDevelopmentExpense"
+    - "us-gaap:DepreciationAndAmortization"
+    - "us-gaap:OtherOperatingExpenses"
+    
+  "us-gaap:SellingGeneralAndAdministrativeExpense":
+    - "SellingGeneralAndAdministrativeExpense.*"
+    - "SellingExpense.*"
+    - "GeneralAndAdministrativeExpense.*"
+    - "MarketingExpense.*"
+    
+  "us-gaap:ResearchAndDevelopmentExpense":
+    - "ResearchAndDevelopmentExpense.*"
+    - "ResearchAndDevelopment.*"
+    
+  "us-gaap:DepreciationAndAmortization":
+    - "DepreciationAndAmortization.*"
+    - "DepreciationExpense.*"
+    - "AmortizationExpense.*"
+    
+  "us-gaap:OtherOperatingExpenses":
+    - "RestructuringCosts.*"
+    - "ImpairmentCharges.*"
+    - "LegalExpense.*"
+    
+  "us-gaap:OperatingIncomeLoss":
+    - "OperatingIncome.*"
+    - "GrossProfit.*"
+    - "OperatingIncomeLoss.*"
+    
+  "us-gaap:NetIncomeLoss":
+    - "NetIncome.*"
+    - "NetIncomeLoss.*"
+    - "IncomeLoss.*"
+    
+  "us-gaap:IncomeTaxExpenseBenefit":
+    - "IncomeTax.*"
+    - "IncomeTaxExpenseBenefit.*"
+    - ".*TaxExpense.*"
+    
+  "us-gaap:InterestExpense":
+    - "InterestExpense.*"
+    
+  "us-gaap:EarningsPerShare":
+    - "EarningsPerShare.*"

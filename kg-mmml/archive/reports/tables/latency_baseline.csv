@@ -1,0 +1,2 @@
+N,method,dim,p50_ms,p95_ms,p99_ms,q,memory_mb,notes
+1000,exact-cosine,tfidf,1.1955210002270178,1.2766606998184216,1.3651567497936414,100,488,sparse dot

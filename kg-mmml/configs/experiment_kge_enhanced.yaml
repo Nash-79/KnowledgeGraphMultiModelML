@@ -1,0 +1,12 @@
+data:
+  dataset: sec_edgar_text_v1
+  kg_snapshot: data/kg/sec_edgar_2025-10-12_enhanced
+  split: official_2022_2024
+
+eval:
+  srs:
+    weights:
+      RTF: 0.35
+      AP: 0.20
+      HP: 0.25
+      AtP: 0.20

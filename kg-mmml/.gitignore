@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDEs
+.idea/
+.vscode/
+
+# Testing
+# Ignore data and environment files (relative to kg-mmml/)
+.hypothesis/
+data/
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+# Data
+datasets/sec_edgar/data/
+*.jsonl
+*.json
+!configs/*.yaml
+
+# Outputs
+outputs/
+.cache/
+
+# Reports
+reports/tables/*.csv
+reports/figures/*.png
+reports/debug/*.json
+
+# Models
+*.pt
+*.pth
+*.faiss
+
+# Environment
+.env
+
+# OS
+.DS_Store
+Thumbs.db

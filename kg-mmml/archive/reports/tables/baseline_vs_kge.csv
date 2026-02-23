@@ -1,0 +1,3 @@
+mode,micro_f1,macro_f1,n_docs_train,n_docs_test,notes
+text,0.9921,0.9902,540,181,
+text+concept,1.0000,1.0000,540,181,

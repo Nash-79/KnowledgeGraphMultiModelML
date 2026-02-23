@@ -1,0 +1,5 @@
+model,macro_f1,micro_f1,n_train,n_test
+text-only (baseline),0.9723,0.9833,2413,805
+"text+concept (joint, λ=0.0)",0.8128,0.9194,2413,805
+IMPROVEMENT (pp),-15.96,-6.38,,
+DECISION GATE (≥3.0pp micro-F1),,❌ FAIL,,
